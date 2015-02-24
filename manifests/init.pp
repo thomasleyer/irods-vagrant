@@ -12,7 +12,6 @@ node default {
     require    => [Class['postgresql::server'],Postgresql::Server::Role['irods']],
   } 
   postgresql::server::role { 'myirods':
-    db            => 'ICAT',
     login         => true,
     superuser     => true, 
     createdb      => true,
