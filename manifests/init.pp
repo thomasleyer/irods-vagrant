@@ -1,8 +1,21 @@
 node default {
+
+#  file { '/data':
+#    ensure => directory,
+#    owner  => 'postgres',
+#    group  => 'postgres',
+#  } ->
   class { 'postgresql::server':
     listen_addresses => '*',
+    datadir          => '/data',
   } 
+  postgresql::server::config_entry { 'wal_level':
+    value => 'hot_standby',
+  }
 
+  postgresql::server::config_entry { 'archiving_mode':
+    value => 'on',
+  }
   postgresql::server::database { 'ICAT':
     owner     => 'irods',
     encoding => $postgresql::server::encoding,
