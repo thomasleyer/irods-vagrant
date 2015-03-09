@@ -4,5 +4,4 @@
 :yaml:
   :datadir: hieradata
 :hierarchy:
-  - "node/%{::clientcert}"
   - common
