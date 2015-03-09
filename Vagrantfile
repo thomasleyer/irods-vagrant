@@ -9,7 +9,9 @@ Vagrant::Config.run do |config|
   config.vm.customize [ 'modifyvm', :id , '--memory', 256 ]
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = 'manifests'
-    puppet.manifest_file = 'init.pp'
+    puppet.manifest_file = 'site.pp'
     puppet.module_path = 'modules'
+    puppet.hiera_config_path = 'hiera.yaml'
+    puppet.working_directory = '/vagrant/'
   end
 end

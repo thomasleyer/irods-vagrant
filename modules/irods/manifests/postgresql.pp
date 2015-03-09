@@ -1,10 +1,5 @@
-node default {
+class irods::postgresql {
 
-#  file { '/data':
-#    ensure => directory,
-#    owner  => 'postgres',
-#    group  => 'postgres',
-#  } ->
   class { 'postgresql::server':
     listen_addresses => '*',
     datadir          => '/data',
@@ -36,11 +31,5 @@ node default {
     superuser     => true,
     password_hash => postgresql_password('irods', 'password'),
   }
-#  postgresql::server::database_grant { "GRANT irods - ALL - ICAT":
-#    privilege => 'ALL',
-#    db        => 'ICAT',
-#    role      => 'irods',
-#  } -> Postgresql::Validate_db_connection<| database_name == 'ICAT' |>
-
 
 }

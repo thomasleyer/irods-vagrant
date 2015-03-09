@@ -1,2 +1,2 @@
 ---
-  role: role::mongo::test
+  role: role::irods::dev

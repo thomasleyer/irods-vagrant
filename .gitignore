@@ -1,2 +1,7 @@
-modules/*
 .vagrant
+modules/apt
+modules/concat
+modules/postgresql
+modules/stdlib
+modules/yum
+
