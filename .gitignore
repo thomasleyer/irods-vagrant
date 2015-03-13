@@ -4,4 +4,5 @@ modules/concat
 modules/postgresql
 modules/stdlib
 modules/yum
+keys/
 
